@@ -1,8 +1,7 @@
 # Repository Name 
 
-Description of the Repository (Paragraph 1)
+AWS Config Resource Tag Rule Setup
 
-Description of the Repository (Paragraph 2)
 
 ## On this Page
 - [Architecture Overview](#architecture-overview)
