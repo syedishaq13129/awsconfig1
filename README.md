@@ -52,15 +52,13 @@ To deploy this CloudFormation template and create the AWS Config rule, you can f
 ![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/4043c17d-a8d8-4a98-9dc8-fa65a9f905ed)
 
 
- 
-
 	Upload the YAML file containing the code you shared.
 
 	Click "Next" to proceed to the stack configuration page.
                                                               
 	Provide a stack name for identification.
 
- 
+![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/b2d1968c-1314-4885-a483-300d50caf3de)
 
 	Optionally, you can specify additional stack options such as tags, IAM roles, and permissions.
 
@@ -70,7 +68,8 @@ To deploy this CloudFormation template and create the AWS Config rule, you can f
 
 	On the "Configure stack options" page, you can specify advanced options if needed, but the default settings should suffice for this example.
 
- 
+ ![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/0208913a-b882-47d7-8f98-292c28282d90)
+
 
 
 
@@ -78,42 +77,26 @@ To deploy this CloudFormation template and create the AWS Config rule, you can f
 	Click "Next" to proceed to the "Review" page.
 
 
+![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/29b32ff1-e36b-49a7-b2f2-5fcd633369df)
 
  
-
-
-                                            
-
-
-
-
-
-
-
-
-
-
 	Review the stack details and click "Create stack" to initiate the deployment.
 
-	 
-
- 
-
- 
+![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/5b2b461a-dc5d-4135-b6bb-d879114ef851)
+![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/22d982a4-cb9b-4fa8-be40-e332a942418b)
+![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/2f0590ae-cb4a-4f33-a2b8-74687b0cc0c3)
 
 	Wait for the CloudFormation stack to be created and for the AWS Config rule to be provisioned. You can monitor the progress on the CloudFormation stack events page.
 
-
- 
+![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/3ab74941-c46e-480d-8aac-459fbb9ab63f)
 
 	Once the stack creation is complete, the AWS Config rule will be active and enforced on your AWS account.
 
+ ![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/d9dad56e-2574-4500-8187-5330f4e88696)
  
-
-
 	After the deployment, the AWS Config rule "required-tags" will be in effect, ensuring that all EC2 instances have the specified tag with the key "map1key" and value "map001". If any instances are found without this tag, they will be considered non-compliant.
 
- 
+ ![Uploading image.png…]()
 
 Remember to review and customize the code, input parameters, and scope to align with your specific tagging requirements before deploying it to your AWS account.
 
