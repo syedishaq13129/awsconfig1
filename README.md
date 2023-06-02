@@ -96,7 +96,8 @@ To deploy this CloudFormation template and create the AWS Config rule, you can f
  
 	After the deployment, the AWS Config rule "required-tags" will be in effect, ensuring that all EC2 instances have the specified tag with the key "map1key" and value "map001". If any instances are found without this tag, they will be considered non-compliant.
 
- ![Uploading image.png…]()
+ ![image](https://github.com/syedishaq13129/awsconfig1/assets/122854504/913dda83-ad06-4eff-92bd-41662d495e4b)
+
 
 Remember to review and customize the code, input parameters, and scope to align with your specific tagging requirements before deploying it to your AWS account.
 
