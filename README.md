@@ -103,7 +103,31 @@ Remember to review and customize the code, input parameters, and scope to align 
 
 
 ### Deploying with minimum permissions
-Details on the permission required to run the scripts
+To deploy a CloudFormation template that includes a Config rule with a resource tag using an AWS managed rule, you will need the following minimum permissions:
+
+CloudFormation Permissions:
+•	cloudformation:CreateStack
+•	cloudformation:UpdateStack
+•	cloudformation:DeleteStack
+
+AWS Config Permissions:
+•	config:PutConfigRule
+•	config:PutConfigRuleSuppression
+•	config:PutConfigurationAggregator
+
+IAM Permissions:
+•	iam:GetRole
+•	iam:PassRole (for passing the IAM role to AWS Config)
+
+
+AWS Resource Tagging Permissions:
+•	tag:GetResources
+
+
+Make sure to attach these permissions to the IAM user or role that will be executing the CloudFormation deployment.
+
+It's important to note that these permissions provide the minimum required access to deploy the CloudFormation stack with the AWS managed rule. You may need additional permissions depending on the resources and services involved in your CloudFormation template.
+
 
 ### Customization
 Details on customization that can be done
@@ -117,4 +141,14 @@ Code Snippit
 ```
 
 ## Validating Deployment
-Details on how to validate the deployment
+Resource Configuration: Customize the specific resources that the Config rule monitors by specifying resource types, tags, or a combination of both. This is done by configuring the Scope property of the AWS Config rule in the CloudFormation template. You can define the resource types to be monitored (e.g., EC2 instances, S3 buckets) and specify specific tag key-value pairs that the resources must have to be evaluated by the rule.
+
+Rule Parameters: Some AWS managed Config rules have customizable parameters that allow you to further define the rule's behavior. These parameters can be specified in the CloudFormation template. For example, the AWS::Config::ConfigRule resource type allows you to set parameters such as MaximumExecutionFrequency to define how often the rule should be evaluated.
+
+Rule Evaluation Frequency: Customize the frequency at which the Config rule is evaluated by specifying the MaximumExecutionFrequency parameter in the CloudFormation template. You can set it to values such as One_Hour, Three_Hours, Six_Hours, Twelve_Hours, or TwentyFour_Hours. This determines how often the rule's compliance is assessed.
+
+Rule Names and Descriptions: Provide custom names and descriptions for the Config rules in the CloudFormation template to make them more descriptive and identifiable within your AWS environment. You can set the ConfigRuleName and Description properties of the AWS::Config::ConfigRule resource in the template.
+
+Outputs and Stack Outputs: Define outputs in the CloudFormation template to extract information about the deployed resources. For example, you can create an output for the ARN of the created Config rule or any other relevant information you may need.
+
+By utilizing these customizations, you can tailor the behavior and scope of the Config rule to match your specific requirements when deploying it through CloudFormation.
